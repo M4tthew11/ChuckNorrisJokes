@@ -1,17 +1,13 @@
 package org.chucknorris.project;
 
-import org.chucknorris.project.api.chucknorrisjokes.ChuckNorrisApiResponse;
-import org.chucknorris.project.controllers.ChuckNorrisJokesController;
-import org.chucknorris.project.service.ChuckNorrisjokesService;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+@SpringBootApplication
 public class ChuckNorrisApplication {
-    public static void main(String[] args) {
-        ChuckNorrisjokesService chuckNorrisjokesService = new ChuckNorrisjokesService();
-        ChuckNorrisJokesController chuckNorrisJokesController = new ChuckNorrisJokesController(chuckNorrisjokesService);
 
-        ChuckNorrisApiResponse chuckNorrisApiResponse = chuckNorrisJokesController.randomJoke();
+	public static void main(String[] args) {
+		SpringApplication.run(ChuckNorrisApplication.class, args);
+	}
 
-        String joke = chuckNorrisApiResponse.getValue();
-
-    }
 }

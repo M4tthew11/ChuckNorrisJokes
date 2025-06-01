@@ -5,11 +5,13 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 import org.chucknorris.project.api.chucknorrisjokes.ChuckNorrisApiResponse;
+import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+@Service
 public class ChuckNorrisjokesService {
     private static final String HTTPS_API_CHUCKNORRIS_IO_JOKES_RANDOM = "https://api.chucknorris.io/jokes/random";
     private static final Logger LOGGER = Logger.getLogger(ChuckNorrisjokesService.class.getName());
